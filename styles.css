@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --max-page-width: 2560px;
+  --site-title-size-value: 2;
+  --heading-3-size-value: 2.2;
+  --heading-line-height: 1.4;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -67,6 +74,7 @@ a {
 
 .header-inner {
   position: relative;
+  z-index: 101;
   width: 100%;
 }
 
@@ -96,9 +104,11 @@ a {
 
 .header-title-text a {
   font-family: acumin-pro, sans-serif;
-  font-size: 26.128px;
+  font-size: calc(
+    (var(--site-title-size-value) - 1) * calc(0.012 * min(100vh, 900px)) + 1rem
+  );
   font-weight: 500;
-  line-height: 36.5792px;
+  line-height: var(--heading-line-height);
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -127,6 +137,8 @@ a {
 .header-burger {
   display: flex;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .header-burger-btn {
@@ -324,7 +336,7 @@ a {
 .fe-block-image .sqs-block-alignment-wrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
@@ -332,9 +344,13 @@ a {
 .sqs-html-content h3 {
   margin: 0;
   font-family: acumin-pro, sans-serif;
-  font-size: 28.1536px;
+  font-size: calc(
+    (var(--heading-3-size-value) - 1) * calc(0.012 * min(100vh, 900px)) + 1rem
+  );
   font-weight: 500;
-  line-height: 37.5231px;
+  line-height: calc(
+    var(--heading-line-height) * (1 + (1 - var(--heading-3-size-value)) / 25)
+  );
   white-space: pre-wrap;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
@@ -397,8 +413,15 @@ a {
   }
 
   .header-title-text a {
-    font-size: 33.28px;
-    line-height: 46.592px;
+    font-size: min(
+      calc((var(--site-title-size-value) - 1) * 1.2vw + 1rem),
+      max(
+        calc(
+          (var(--site-title-size-value) - 1) * 0.012 * var(--max-page-width) + 1rem
+        ),
+        calc(var(--site-title-size-value) * 1rem)
+      )
+    );
   }
 
   .page-section {
@@ -411,8 +434,15 @@ a {
   }
 
   .sqs-html-content h3 {
-    font-size: 36.736px;
-    line-height: 48.9617px;
+    font-size: min(
+      calc((var(--heading-3-size-value) - 1) * 1.2vw + 1rem),
+      max(
+        calc(
+          (var(--heading-3-size-value) - 1) * 0.012 * var(--max-page-width) + 1rem
+        ),
+        calc(var(--heading-3-size-value) * 1rem)
+      )
+    );
   }
 
   .fluid-engine {
@@ -420,7 +450,7 @@ a {
     --cell-max-width: calc((var(--sqs-site-max-width) - (11px * (24 - 1))) / 24);
     --row-height-scaling-factor: 0.0215;
     --container-width: min(
-      var(--sqs-site-max-width),
+      var(--max-page-width),
       calc(100vw - var(--sqs-site-gutter) * 2)
     );
 
@@ -444,9 +474,8 @@ a {
 
   .fe-block-image {
     grid-area: 3 / 14 / 18 / 26;
-    --image-size: calc(
-      15 * (var(--container-width) * var(--row-height-scaling-factor)) + 14 * 11px
-    );
+    --row-min-height: calc(var(--container-width) * var(--row-height-scaling-factor));
+    --image-size: calc(15 * var(--row-min-height) + 14 * 11px);
   }
 }
 

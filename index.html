@@ -12,15 +12,28 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:title" content="Diana Hurtado" />
     <meta name="twitter:card" content="summary" />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://file.squarespace-cdn.com" crossorigin />
+    <link rel="stylesheet" href="fonts.css" />
+    <script>document.documentElement.classList.add("wf-loading");</script>
+    <style>
+      @keyframes fonts-loading {
+        0%,
+        99% {
+          color: transparent;
+        }
+      }
+
+      html.wf-loading * {
+        animation: fonts-loading 3s;
+      }
+    </style>
     <script
       src="https://use.typekit.net/ik/RreO2pIrFbb-8Gc6OT4-5gwHaLphZ0JaQxs2T9gyIo3fecGJXnX1IyvhF2jtFRZLFR6a526UFDMDZAZR5QJuF2gcZAJhjR6oe6MKfcBRiAuTdKu3Scv7f6Rwk3IbMg6BJMJ7f6RBk3IbMg6YJMJ7f6RFk3IbMg6VJMJ7f6Rek3IbMg6sJMHbMLeftCwe.js"
       async
+      onload="try { Typekit.load(); } catch (e) {} document.documentElement.classList.remove('wf-loading');"
     ></script>
-    <script>
-      try {
-        Typekit.load();
-      } catch (e) {}
-    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>

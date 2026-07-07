@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("https://file.squarespace-cdn.com/content/v2/namespaces/fonts/libraries/sqsp/assets/00d1a230-e215-4217-b1cf-31145362801e/latin.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://file.squarespace-cdn.com/content/v2/namespaces/fonts/libraries/sqsp/assets/da0c3c0d-458f-46e2-9c64-bac004d4e8c1/latin.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("https://file.squarespace-cdn.com/content/v2/namespaces/fonts/libraries/sqsp/assets/e1217d90-e3f1-4318-af30-972ddbb752f6/latin.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://file.squarespace-cdn.com/content/v2/namespaces/fonts/libraries/sqsp/assets/ab6b1da4-72e3-4abf-a176-e7a8a24b53d1/latin.woff2")
+    format("woff2");
+}
